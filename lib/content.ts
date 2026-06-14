@@ -27,10 +27,8 @@ export const profile = {
 };
 
 // ---- İletişim formu (Formspree) ----
-// https://formspree.io adresinden ücretsiz bir form oluşturun ve aldığınız
-// endpoint'i buraya yapıştırın. Örn: "https://formspree.io/f/abcdwxyz"
-// Placeholder olduğu sürece form "demo" modunda çalışır (gerçek gönderim yapmaz).
-export const formspreeEndpoint = "https://formspree.io/f/YOUR_FORM_ID";
+// https://formspree.io endpoint'i. Form gerçek gönderim modunda çalışır.
+export const formspreeEndpoint = "https://formspree.io/f/meewvkyb";
 
 // ---- Sosyal linkler ----
 export const socials = [
@@ -47,6 +45,9 @@ export interface TimelineItem {
   role: LocalizedText;
   org: LocalizedText;
   description: LocalizedText;
+  // Opsiyonel logo — public/logos/ içine dosyayı koyun (örn. "/logos/turkcell.svg").
+  // Dosya yoksa otomatik olarak kurum baş harfleri gösterilir.
+  logo?: string;
 }
 
 export const timeline: TimelineItem[] = [
@@ -54,6 +55,7 @@ export const timeline: TimelineItem[] = [
     period: { tr: "Tem 2026 — Günümüz", en: "Jul 2026 — Present" },
     role: { tr: "Yazılım Mühendisi", en: "Software Engineer" },
     org: { tr: "Turkcell Global Bilgi", en: "Turkcell Global Bilgi" },
+    logo: "/logos/turkcell.svg",
     description: {
       tr: "Turkcell Global Bilgi'nin Technocamp programına seçildim; uygulamalı geliştirme ve modern mühendislik pratiklerine odaklanan yapılandırılmış bir yazılım mühendisliği programı.",
       en: "Selected for Turkcell Global Bilgi's Technocamp program — a structured software engineering track focused on hands-on development and modern engineering practices.",
@@ -63,6 +65,7 @@ export const timeline: TimelineItem[] = [
     period: { tr: "Nis 2026 — Haz 2026", en: "Apr 2026 — Jun 2026" },
     role: { tr: "Yazılım Mühendisi Stajyeri", en: "Software Engineer Intern" },
     org: { tr: "Avsos.ai", en: "Avsos.ai" },
+    logo: "/logos/avsos.svg",
     description: {
       tr: "Havacılık operasyonları yazılımı için Java/Quarkus mikroservisleri geliştirdim; Kafka ve Apache Camel ile olay-güdümlü mesajlaşma akışları, Keycloak (OIDC/OAuth2) ile kimlik doğrulama, PostgreSQL/MongoDB veri katmanı ve OpenTelemetry/Grafana ile gözlemlenebilirlik kurdum.",
       en: "Built Java/Quarkus microservices for aviation-operations software; implemented event-driven messaging with Kafka and Apache Camel, authentication with Keycloak (OIDC/OAuth2), a PostgreSQL/MongoDB data layer, and observability with OpenTelemetry/Grafana.",
@@ -72,6 +75,7 @@ export const timeline: TimelineItem[] = [
     period: { tr: "Ağu 2025 — Eki 2025", en: "Aug 2025 — Oct 2025" },
     role: { tr: "Yazılım Mühendisi Stajyeri", en: "Software Engineer Intern" },
     org: { tr: "SunExpress Airlines", en: "SunExpress Airlines" },
+    logo: "/logos/sunexpress.svg",
     description: {
       tr: ".NET Web API ile Clean Architecture, DDD ve CQRS prensiplerini uygulayarak backend servisleri geliştirdim; EF Core ve SQL Server ile veri kalıcılığını yönettim, React ve TypeScript ile responsive arayüzler kurdum.",
       en: "Developed .NET Web API backend services applying Clean Architecture, DDD and CQRS; handled persistence with EF Core and SQL Server, and built responsive React/TypeScript interfaces.",
@@ -81,6 +85,7 @@ export const timeline: TimelineItem[] = [
     period: { tr: "Eyl 2023 — Kas 2024", en: "Sep 2023 — Nov 2024" },
     role: { tr: "Kurucu", en: "Founder" },
     org: { tr: "Llux", en: "Llux" },
+    logo: "/logos/llux.svg",
     description: {
       tr: "Küçük bir beyaz eşya e-ticaret işletmesi kurup yönettim; büyük pazaryerlerinde 8.8+ müşteri memnuniyeti puanına ulaştım.",
       en: "Founded and ran a small home-appliances e-commerce business, reaching an 8.8+ customer-satisfaction rating across major marketplaces.",

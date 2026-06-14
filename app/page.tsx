@@ -8,9 +8,11 @@ import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "@/lib/posts";
+import { getTimeline } from "@/lib/timelineData";
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3);
+  const timelineItems = getTimeline();
 
   return (
     <>
@@ -18,7 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Timeline />
+        <Timeline items={timelineItems} />
         <TechStack />
         <Projects />
         <Blog posts={posts} />
