@@ -36,7 +36,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
             <Reveal key={i} delay={i * 0.05}>
               <div className={`relative ${isLast ? "" : "pb-16"}`}>
                 {/* Logo (dosya varsa) ya da kurum baş harfleri */}
-                <span className="absolute -left-[49px] top-0 flex h-9 w-9 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-soft text-xs font-semibold text-accent sm:-left-[59px]">
+                <span className="absolute -left-[54px] top-0 flex h-11 w-11 items-center justify-center overflow-hidden rounded-md border border-border bg-white text-xs font-semibold text-zinc-700 sm:-left-[62px]">
                   {item.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
