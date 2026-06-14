@@ -48,6 +48,9 @@ export interface TimelineItem {
   // Opsiyonel logo — public/logos/ içine dosyayı koyun (örn. "/logos/turkcell.svg").
   // Dosya yoksa otomatik olarak kurum baş harfleri gösterilir.
   logo?: string;
+  // Logoyu rozet içinde yakınlaştırmak için ölçek (1 = normal). Kenar boşluğu fazla
+  // olan logolar için 1.3–1.6 arası iyi sonuç verir.
+  logoScale?: number;
 }
 
 export const timeline: TimelineItem[] = [
@@ -56,6 +59,7 @@ export const timeline: TimelineItem[] = [
     role: { tr: "Yazılım Mühendisi", en: "Software Engineer" },
     org: { tr: "Turkcell Global Bilgi", en: "Turkcell Global Bilgi" },
     logo: "/logos/turkcell.jpeg",
+    logoScale: 1.5,
     description: {
       tr: "Turkcell Global Bilgi'nin Technocamp programına seçildim; uygulamalı geliştirme ve modern mühendislik pratiklerine odaklanan yapılandırılmış bir yazılım mühendisliği programı.",
       en: "Selected for Turkcell Global Bilgi's Technocamp program — a structured software engineering track focused on hands-on development and modern engineering practices.",
@@ -76,6 +80,7 @@ export const timeline: TimelineItem[] = [
     role: { tr: "Yazılım Mühendisi Stajyeri", en: "Software Engineer Intern" },
     org: { tr: "SunExpress Airlines", en: "SunExpress Airlines" },
     logo: "/logos/sunexpress.png",
+    logoScale: 1.45,
     description: {
       tr: ".NET Web API ile Clean Architecture, DDD ve CQRS prensiplerini uygulayarak backend servisleri geliştirdim; EF Core ve SQL Server ile veri kalıcılığını yönettim, React ve TypeScript ile responsive arayüzler kurdum.",
       en: "Developed .NET Web API backend services applying Clean Architecture, DDD and CQRS; handled persistence with EF Core and SQL Server, and built responsive React/TypeScript interfaces.",
@@ -86,6 +91,7 @@ export const timeline: TimelineItem[] = [
     role: { tr: "Kurucu", en: "Founder" },
     org: { tr: "Llux", en: "Llux" },
     logo: "/logos/llux.png",
+    logoScale: 1.5,
     description: {
       tr: "Küçük bir beyaz eşya e-ticaret işletmesi kurup yönettim; büyük pazaryerlerinde 8.8+ müşteri memnuniyeti puanına ulaştım.",
       en: "Founded and ran a small home-appliances e-commerce business, reaching an 8.8+ customer-satisfaction rating across major marketplaces.",

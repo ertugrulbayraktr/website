@@ -31,9 +31,10 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
       <div className="relative ml-3 border-l border-border pl-8 sm:ml-5 sm:pl-10">
         {items.map((item, i) => {
           const org = pick(item.org, lang);
+          const isLast = i === items.length - 1;
           return (
             <Reveal key={i} delay={i * 0.05}>
-              <div className="relative pb-20 last:pb-0">
+              <div className={`relative ${isLast ? "" : "pb-16"}`}>
                 {/* Logo (dosya varsa) ya da kurum baş harfleri */}
                 <span className="absolute -left-[49px] top-0 flex h-9 w-9 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-soft text-xs font-semibold text-accent sm:-left-[59px]">
                   {item.logo ? (
@@ -41,7 +42,8 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                     <img
                       src={item.logo}
                       alt={`${org} logo`}
-                      className="h-full w-full object-contain p-1"
+                      className="h-full w-full object-contain p-0.5"
+                      style={{ transform: `scale(${item.logoScale ?? 1})` }}
                     />
                   ) : (
                     initials(org)
