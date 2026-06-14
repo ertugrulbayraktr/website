@@ -33,7 +33,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
           const org = pick(item.org, lang);
           return (
             <Reveal key={i} delay={i * 0.05}>
-              <div className="relative pb-14 last:pb-0">
+              <div className="relative pb-20 last:pb-0">
                 {/* Logo (dosya varsa) ya da kurum baş harfleri */}
                 <span className="absolute -left-[49px] top-0 flex h-9 w-9 items-center justify-center overflow-hidden rounded-md border border-border bg-bg-soft text-xs font-semibold text-accent sm:-left-[59px]">
                   {item.logo ? (
