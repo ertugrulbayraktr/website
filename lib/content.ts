@@ -63,8 +63,8 @@ export const timeline: TimelineItem[] = [
     role: { tr: "Yazılım Mühendisi", en: "Software Engineer" },
     org: { tr: "Turkcell Global Bilgi", en: "Turkcell Global Bilgi" },
     logo: "/logos/turkcell.jpeg",
-    logoScale: 3.5,
-    logoOffsetY: 35,
+    logoScale: 3.8,
+    logoOffsetY: 32,
     description: {
       tr: "Turkcell Global Bilgi'nin Technocamp programına seçildim; uygulamalı geliştirme ve modern mühendislik pratiklerine odaklanan yapılandırılmış bir yazılım mühendisliği programı.",
       en: "Selected for Turkcell Global Bilgi's Technocamp program — a structured software engineering track focused on hands-on development and modern engineering practices.",
@@ -86,7 +86,7 @@ export const timeline: TimelineItem[] = [
     org: { tr: "SunExpress Airlines", en: "SunExpress Airlines" },
     logo: "/logos/sunexpress.png",
     logoScale: 3.4,
-    logoOffsetX: 92,
+    logoOffsetX: 97,
     description: {
       tr: ".NET Web API ile Clean Architecture, DDD ve CQRS prensiplerini uygulayarak backend servisleri geliştirdim; EF Core ve SQL Server ile veri kalıcılığını yönettim, React ve TypeScript ile responsive arayüzler kurdum.",
       en: "Developed .NET Web API backend services applying Clean Architecture, DDD and CQRS; handled persistence with EF Core and SQL Server, and built responsive React/TypeScript interfaces.",
