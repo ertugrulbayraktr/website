@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import Providers from "@/components/Providers";
 
 const inter = Inter({
@@ -65,6 +66,7 @@ export default function RootLayout({
         className={`${inter.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
       >
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );

@@ -49,8 +49,21 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.24 }}
-        className="mt-10 flex flex-wrap items-center gap-4"
+        transition={{ duration: 0.6, delay: 0.22 }}
+        className="mt-6 flex items-center gap-2.5 text-sm text-muted"
+      >
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+        </span>
+        {t("hero.status")}
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.28 }}
+        className="mt-8 flex flex-wrap items-center gap-4"
       >
         <Link
           href="#contact"

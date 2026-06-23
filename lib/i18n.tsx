@@ -25,6 +25,10 @@ export const dict: Dict = {
     tr: "Backend & Dağıtık Sistemler",
     en: "Backend & Distributed Systems",
   },
+  "hero.status": {
+    tr: "Turkcell Global Bilgi'de Yazılım Mühendisi",
+    en: "Software Engineer at Turkcell Global Bilgi",
+  },
   "hero.cta.primary": { tr: "İletişime geç", en: "Get in touch" },
   "hero.cta.secondary": { tr: "Projelerimi gör", en: "View projects" },
 
