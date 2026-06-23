@@ -47,6 +47,8 @@ export const dict: Dict = {
   },
   "projects.visit": { tr: "İncele", en: "Visit" },
   "projects.detail": { tr: "Detayları gör", en: "View details" },
+  "projects.comingSoon": { tr: "Yeni proje yakında", en: "New project — coming soon" },
+  "project.screenshots": { tr: "Ekran Görüntüleri", en: "Screenshots" },
   "project.back": { tr: "Tüm projelere dön", en: "Back to all projects" },
   "project.overview": { tr: "Genel Bakış", en: "Overview" },
   "project.problem": { tr: "Problem", en: "Problem" },

@@ -112,6 +112,45 @@ export default function ProjectView({ project }: { project: Project }) {
             </ul>
           </div>
         </Reveal>
+
+        {project.screenshots && project.screenshots.length > 0 && (
+          <Reveal>
+            <div>
+              <h2 className="font-serif text-2xl font-semibold">
+                {t("project.screenshots")}
+              </h2>
+              <div className="mt-5 space-y-6">
+                {project.screenshots.map((shot, i) => (
+                  <figure key={i}>
+                    <a
+                      href={shot.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block overflow-hidden rounded-xl border border-border transition hover:border-accent"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={shot.src}
+                        alt={
+                          shot.caption
+                            ? pick(shot.caption, lang)
+                            : `${pick(project.title, lang)} — ${i + 1}`
+                        }
+                        className="w-full"
+                        loading="lazy"
+                      />
+                    </a>
+                    {shot.caption && (
+                      <figcaption className="mt-2 text-center text-sm text-muted">
+                        {pick(shot.caption, lang)}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        )}
       </div>
     </article>
   );

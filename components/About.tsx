@@ -21,9 +21,22 @@ export default function About() {
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Bio */}
           <Reveal className="lg:col-span-1">
-            <p className="text-lg leading-relaxed text-fg">
-              {pick(profile.bio, lang)}
-            </p>
+            <div className="space-y-4">
+              {pick(profile.bio, lang)
+                .split("\n\n")
+                .map((para, i) => (
+                  <p
+                    key={i}
+                    className={
+                      i === 0
+                        ? "text-lg leading-relaxed text-fg"
+                        : "leading-relaxed text-muted"
+                    }
+                  >
+                    {para}
+                  </p>
+                ))}
+            </div>
             <p className="mt-4 text-sm text-muted">{pick(profile.location, lang)}</p>
           </Reveal>
 

@@ -73,6 +73,26 @@ export default function Projects() {
             </Link>
           </Reveal>
         ))}
+
+        {/* Yakında eklenecek proje için yer tutucu kart */}
+        <Reveal delay={(projects.length % 2) * 0.05}>
+          <div className="flex h-full min-h-[200px] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-border p-6 text-center text-muted">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <span className="text-sm font-medium">{t("projects.comingSoon")}</span>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -19,8 +19,8 @@ export const profile = {
   } as LocalizedText,
   // About bölümündeki uzun biyografi
   bio: {
-    tr: "Dağıtık sistemler ve olay-güdümlü mikroservisler üzerine uzmanlaşmış bir yazılım mühendisiyim; hem Java/Quarkus hem de .NET ekosistemlerinde çalışıyorum. Clean Architecture, DDD ve CQRS ile ölçeklenebilir backend mimarileri tasarlıyor; Kafka ve Apache Camel ile mesaj-güdümlü iş akışları kuruyor ve RAG tabanlı yapay zekâ copilot'ları gibi LLM destekli özellikler entegre ediyorum. Ayrıca React ve TypeScript ile tam yığın çözümler geliştiriyor; Docker ile konteynerleştirme ve OpenTelemetry, Prometheus, Grafana, Loki ile uçtan uca gözlemlenebilirlik üzerinde çalışıyorum. Amacım iş gereksinimlerini sağlam, üretim seviyesinde sistemlere dönüştürmek.",
-    en: "I'm a software engineer specializing in distributed systems and event-driven microservices, working across both the Java/Quarkus and .NET ecosystems. I design scalable backend architectures with Clean Architecture, DDD and CQRS; build message-driven workflows with Kafka and Apache Camel; and integrate LLM-powered features such as RAG-based AI copilots. I also deliver full-stack solutions with React and TypeScript, and work with Docker and end-to-end observability via OpenTelemetry, Prometheus, Grafana and Loki — turning business requirements into robust, production-grade systems.",
+    tr: "Ertuğrul Bayraktar, dağıtık sistemler ve olay-güdümlü mikroservisler üzerine uzmanlaşmış bir yazılım mühendisidir; hem Java/Quarkus hem de .NET ekosistemlerinde çalışır. Clean Architecture, DDD ve CQRS ile ölçeklenebilir backend mimarileri tasarlar; Kafka ve Apache Camel ile mesaj-güdümlü iş akışları kurar ve RAG tabanlı yapay zekâ copilot'ları gibi LLM destekli özellikler entegre eder. Ayrıca React ve TypeScript ile tam yığın çözümler geliştirir; Docker ile konteynerleştirme ve OpenTelemetry, Prometheus, Grafana, Loki ile uçtan uca gözlemlenebilirlik üzerinde çalışarak iş gereksinimlerini sağlam, üretim seviyesinde sistemlere dönüştürür.\n\nMühendisliğin dışında yaklaşık on bir yıl boyunca profesyonel lisanslı kickboks sporcusu olarak müsabakalara çıktı; altı yıldır finansal piyasalarda aktif olarak işlem yapıyor ve bir dönem piyasa analizleri yayımladı. Üniversite yıllarında kurduğu e-ticaret firmasıyla pazaryerlerinde satışlar gerçekleştirdi. Sporun getirdiği disiplin, piyasaların öğrettiği risk yönetimi ve girişimciliğin kazandırdığı sonuç odaklılık, yazılım geliştirme yaklaşımına da yansıyor.",
+    en: "Ertuğrul Bayraktar is a software engineer specializing in distributed systems and event-driven microservices, working across both the Java/Quarkus and .NET ecosystems. He designs scalable backend architectures with Clean Architecture, DDD and CQRS; builds message-driven workflows with Kafka and Apache Camel; and integrates LLM-powered features such as RAG-based AI copilots. He also delivers full-stack solutions with React and TypeScript, and works with Docker and end-to-end observability via OpenTelemetry, Prometheus, Grafana and Loki — turning business requirements into robust, production-grade systems.\n\nBeyond engineering, he competed as a professional licensed kickboxing athlete for nearly eleven years, has been actively trading the financial markets for six years (publishing market analyses for a period), and founded an e-commerce business during his university years, selling across major marketplaces. The discipline of sport, the risk management taught by the markets, and the results-driven mindset of entrepreneurship all carry over into how he builds software.",
   } as LocalizedText,
   email: "ertugrulbayraktar.bau@gmail.com",
   location: { tr: "İstanbul, Türkiye", en: "Istanbul, Turkey" } as LocalizedText,
@@ -181,6 +181,9 @@ export interface Project {
   problem: LocalizedText;
   solution: LocalizedText;
   highlights: LocalizedText[];
+  // Ekran görüntüleri — public/projects/<slug>/ içine koyup buraya ekleyin.
+  // Örn: { src: "/projects/aeroops/dashboard.png", caption: { tr: "Panel", en: "Dashboard" } }
+  screenshots?: { src: string; caption?: LocalizedText }[];
 }
 
 export const projects: Project[] = [
@@ -332,49 +335,6 @@ export const projects: Project[] = [
       {
         tr: "React + Vite + Tailwind + Chart.js ile görselleştirme arayüzü.",
         en: "Visualization frontend with React, Vite, Tailwind and Chart.js.",
-      },
-    ],
-  },
-  {
-    slug: "crypto-trading-signals",
-    title: {
-      tr: "Kripto Para Fiyat Tahmini & İşlem Sinyali Modeli",
-      en: "Cryptocurrency Price Prediction & Trading Signal Model",
-    },
-    description: {
-      tr: "BTC/USDT için gerçek zamanlı işlem sinyalleri üreten, LSTM ve Random Forest modelleriyle çalışan koyu temalı kripto analiz panosu.",
-      en: "A dark-themed crypto dashboard generating real-time BTC/USDT trading signals, powered by LSTM and Random Forest models.",
-    },
-    year: "2025",
-    tags: ["Python", "Flask", "TensorFlow", "LSTM", "Random Forest", "React"],
-    overview: {
-      tr: "Flask backend API'sini modern bir React arayüzüyle birleştiren, gerçek zamanlı kripto piyasa verisi ve işlem sinyalleri sunan bir pano. LSTM sinir ağları ve Random Forest topluluk modelleri BTC/USDT için Al/Sat sinyalleri üretir.",
-      en: "A dashboard combining a Flask backend API with a modern React frontend to deliver real-time crypto market data and trading signals. LSTM neural networks and Random Forest ensembles generate Buy/Sell signals for BTC/USDT.",
-    },
-    problem: {
-      tr: "Dağınık piyasa verisini ve teknik göstergeleri; yorumlanabilir, gerçek zamanlı işlem sinyallerine dönüştürmek gerekiyordu.",
-      en: "Scattered market data and technical indicators had to be turned into interpretable, real-time trading signals.",
-    },
-    solution: {
-      tr: "ccxt ile Binance'ten alınan canlı veriye LSTM ve Random Forest modelleri uygulanarak teknik göstergelerle zenginleştirilmiş sinyaller üretildi; veri her 3 dakikada bir otomatik yenilenir.",
-      en: "Live data fetched from Binance via ccxt feeds LSTM and Random Forest models to produce indicator-enriched signals; data auto-refreshes every 3 minutes.",
-    },
-    highlights: [
-      {
-        tr: "İlk 20 kripto için canlı fiyat, 24s değişim, hacim ve piyasa değeri; 3 dakikada bir otomatik yenileme.",
-        en: "Live price, 24h change, volume and market cap for the top 20 coins; auto-refresh every 3 minutes.",
-      },
-      {
-        tr: "LSTM + Random Forest ile BTC/USDT Al/Sat sinyalleri ve teknik analiz görselleştirmeleri.",
-        en: "BTC/USDT Buy/Sell signals via LSTM + Random Forest, with technical-analysis visualizations.",
-      },
-      {
-        tr: "Çoklu zaman dilimli (5d, 15d, 1s) profesyonel mum grafikleri.",
-        en: "Professional candlestick charts with multiple timeframes (5m, 15m, 1h).",
-      },
-      {
-        tr: "Flask + TensorFlow/Keras + scikit-learn backend; React + MUI koyu temalı arayüz.",
-        en: "Flask + TensorFlow/Keras + scikit-learn backend; React + MUI dark-themed UI.",
       },
     ],
   },
