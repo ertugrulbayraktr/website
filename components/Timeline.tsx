@@ -43,7 +43,11 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                       src={item.logo}
                       alt={`${org} logo`}
                       className="h-full w-full object-contain p-0.5"
-                      style={{ transform: `scale(${item.logoScale ?? 1})` }}
+                      style={{
+                        transform: `translate(${item.logoOffsetX ?? 0}%, ${
+                          item.logoOffsetY ?? 0
+                        }%) scale(${item.logoScale ?? 1})`,
+                      }}
                     />
                   ) : (
                     initials(org)
