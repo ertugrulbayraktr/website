@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectView from "@/components/ProjectView";
 import { projects, getProject } from "@/lib/content";
+import { getProjectBySlug } from "@/lib/projectsData";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -16,7 +17,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 }
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProject(params.slug);
+  const project = getProjectBySlug(params.slug);
   if (!project) notFound();
 
   return (

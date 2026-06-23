@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
-import { projects, pick } from "@/lib/content";
+import { Project, pick } from "@/lib/content";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
-export default function Projects() {
+export default function Projects({ items }: { items: Project[] }) {
   const { t, lang } = useLang();
 
   return (
@@ -17,12 +17,23 @@ export default function Projects() {
       />
 
       <div className="grid gap-6 sm:grid-cols-2">
-        {projects.map((project, i) => (
+        {items.map((project, i) => (
           <Reveal key={project.slug} delay={(i % 2) * 0.05}>
             <Link
               href={`/projects/${project.slug}`}
-              className="group flex h-full flex-col rounded-xl border border-border bg-bg-soft p-6 transition hover:-translate-y-1 hover:border-accent hover:shadow-sm"
+              className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-bg-soft transition hover:-translate-y-1 hover:border-accent hover:shadow-sm"
             >
+              {project.cover && (
+                <div className="aspect-[16/9] w-full overflow-hidden border-b border-border bg-bg">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={project.cover}
+                    alt={pick(project.title, lang)}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+              )}
+              <div className="flex flex-1 flex-col p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted">
@@ -70,12 +81,13 @@ export default function Projects() {
                   {t("projects.detail")} →
                 </span>
               </div>
+              </div>
             </Link>
           </Reveal>
         ))}
 
         {/* Yakında eklenecek proje için yer tutucu kart */}
-        <Reveal delay={(projects.length % 2) * 0.05}>
+        <Reveal delay={(items.length % 2) * 0.05}>
           <div className="flex h-full min-h-[200px] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-border p-6 text-center text-muted">
             <svg
               width="22"

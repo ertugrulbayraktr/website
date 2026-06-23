@@ -9,10 +9,12 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "@/lib/posts";
 import { getTimeline } from "@/lib/timelineData";
+import { getProjectsList } from "@/lib/projectsData";
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3);
   const timelineItems = getTimeline();
+  const projectItems = getProjectsList();
 
   return (
     <>
@@ -22,7 +24,7 @@ export default function Home() {
         <About />
         <Timeline items={timelineItems} />
         <TechStack />
-        <Projects />
+        <Projects items={projectItems} />
         <Blog posts={posts} />
         <Contact />
       </main>

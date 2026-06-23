@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { Project, pick } from "@/lib/content";
 import Reveal from "./Reveal";
+import Lightbox from "./Lightbox";
 
 function ExternalLink({
   href,
@@ -38,6 +40,8 @@ function ExternalLink({
 
 export default function ProjectView({ project }: { project: Project }) {
   const { t, lang } = useLang();
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const shots = project.screenshots ?? [];
 
   return (
     <article>
@@ -78,6 +82,17 @@ export default function ProjectView({ project }: { project: Project }) {
           </div>
         )}
 
+        {project.cover && (
+          <div className="mt-8 overflow-hidden rounded-xl border border-border">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.cover}
+              alt={pick(project.title, lang)}
+              className="w-full"
+            />
+          </div>
+        )}
+
         <hr className="my-10 border-border" />
       </Reveal>
 
@@ -113,20 +128,20 @@ export default function ProjectView({ project }: { project: Project }) {
           </div>
         </Reveal>
 
-        {project.screenshots && project.screenshots.length > 0 && (
+        {shots.length > 0 && (
           <Reveal>
             <div>
               <h2 className="font-serif text-2xl font-semibold">
                 {t("project.screenshots")}
               </h2>
               <div className="mt-5 space-y-6">
-                {project.screenshots.map((shot, i) => (
+                {shots.map((shot, i) => (
                   <figure key={i}>
-                    <a
-                      href={shot.src}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block overflow-hidden rounded-xl border border-border transition hover:border-accent"
+                    <button
+                      type="button"
+                      onClick={() => setLightboxIndex(i)}
+                      aria-label={`${pick(project.title, lang)} — ${i + 1}`}
+                      className="block w-full cursor-zoom-in overflow-hidden rounded-xl border border-border transition hover:border-accent"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
@@ -139,7 +154,7 @@ export default function ProjectView({ project }: { project: Project }) {
                         className="w-full"
                         loading="lazy"
                       />
-                    </a>
+                    </button>
                     {shot.caption && (
                       <figcaption className="mt-2 text-center text-sm text-muted">
                         {pick(shot.caption, lang)}
@@ -152,6 +167,14 @@ export default function ProjectView({ project }: { project: Project }) {
           </Reveal>
         )}
       </div>
+
+      <Lightbox
+        shots={shots}
+        index={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onNavigate={setLightboxIndex}
+        lang={lang}
+      />
     </article>
   );
 }

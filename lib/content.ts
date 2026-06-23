@@ -176,6 +176,9 @@ export interface Project {
   tags: string[];
   liveUrl?: string;
   repoUrl?: string;
+  // Kapak görseli — public/projects/<slug>/cover.png koyup buraya yolu yazın.
+  // Dosya yoksa kart metin olarak kalır (kırık imaj görünmez).
+  cover?: string;
   // Detay sayfası içeriği
   overview: LocalizedText;
   problem: LocalizedText;
