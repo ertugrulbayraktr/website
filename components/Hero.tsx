@@ -78,7 +78,7 @@ export default function Hero() {
             href={s.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-fg"
+            className="link-underline transition hover:text-fg"
           >
             {s.label}
           </a>

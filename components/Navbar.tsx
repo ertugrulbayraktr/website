@@ -7,6 +7,7 @@ import { useLang } from "@/lib/i18n";
 import { profile } from "@/lib/content";
 import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
+import Monogram from "./Monogram";
 
 const links = [
   { id: "about", key: "nav.about" },
@@ -64,9 +65,10 @@ export default function Navbar() {
       <nav className="mx-auto flex h-16 max-w-content items-center justify-between px-6">
         <Link
           href="/"
-          className="font-serif text-lg font-semibold tracking-tight"
+          className="flex items-center gap-2.5 font-serif text-lg font-semibold tracking-tight"
         >
-          {profile.name}
+          <Monogram className="h-8 w-8 text-xs" />
+          <span className="hidden sm:inline">{profile.name}</span>
         </Link>
 
         {/* Masaüstü menü */}

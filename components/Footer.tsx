@@ -2,6 +2,7 @@
 
 import { useLang } from "@/lib/i18n";
 import { profile, socials } from "@/lib/content";
+import Monogram from "./Monogram";
 
 export default function Footer() {
   const { t } = useLang();
@@ -11,8 +12,11 @@ export default function Footer() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-content flex-col items-center justify-between gap-6 px-6 py-12 sm:flex-row">
         <div className="text-center sm:text-left">
-          <p className="font-serif text-lg font-semibold">{profile.name}</p>
-          <p className="mt-1 text-sm text-muted">
+          <div className="flex items-center justify-center gap-2.5 sm:justify-start">
+            <Monogram className="h-9 w-9 text-sm" />
+            <p className="font-serif text-lg font-semibold">{profile.name}</p>
+          </div>
+          <p className="mt-2 text-sm text-muted">
             © {year} {profile.name}. {t("footer.rights")}
           </p>
         </div>
@@ -24,7 +28,7 @@ export default function Footer() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-fg"
+              className="link-underline transition hover:text-fg"
             >
               {s.label}
             </a>

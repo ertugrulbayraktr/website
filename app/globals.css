@@ -76,6 +76,38 @@ body * {
   color: var(--bg);
 }
 
+/* Klavye odağı (erişilebilirlik + cila) — yalnızca klavye ile gezerken görünür */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Soldan çizilen zarif link altçizgisi (inline metin linkleri için) */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-underline::after {
+    transition: none;
+  }
+}
+
 /* Blog yazısı tipografisi (prose) */
 .prose {
   color: var(--fg);
