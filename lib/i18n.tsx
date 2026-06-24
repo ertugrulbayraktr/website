@@ -34,20 +34,20 @@ export const dict: Dict = {
 
   "timeline.title": { tr: "Tecrübe", en: "Experience" },
   "timeline.subtitle": {
-    tr: "Profesyonel ve akademik yolculuğum.",
-    en: "My professional and academic journey.",
+    tr: "Profesyonel görevler ve akademik kilometre taşları.",
+    en: "Professional roles and academic milestones.",
   },
 
   "stack.title": { tr: "Teknolojiler", en: "Tech Stack" },
   "stack.subtitle": {
-    tr: "Düzenli olarak çalıştığım araçlar ve teknolojiler.",
-    en: "Tools and technologies I work with regularly.",
+    tr: "Yığın genelinde kullanılan temel araçlar ve teknolojiler.",
+    en: "Core tools and technologies across the stack.",
   },
 
   "projects.title": { tr: "Projeler", en: "Projects" },
   "projects.subtitle": {
-    tr: "Üzerinde çalıştığım seçili işler.",
-    en: "Selected work I've built.",
+    tr: "Seçili mühendislik projeleri.",
+    en: "Selected engineering projects.",
   },
   "projects.visit": { tr: "İncele", en: "Visit" },
   "projects.detail": { tr: "Detayları gör", en: "View details" },

@@ -219,6 +219,27 @@ export const projects: Project[] = [
     ],
     repoUrl:
       "https://github.com/ertugrulbayraktr/aeroops-microservices-platform",
+    cover: "/projects/aeroops/dashboard.png",
+    screenshots: [
+      {
+        src: "/projects/aeroops/flight-list.png",
+        caption: { tr: "Uçuş listesi ve filtreleme", en: "Flight list & filtering" },
+      },
+      {
+        src: "/projects/aeroops/history.png",
+        caption: {
+          tr: "Kafka mesajları — MongoDB staging katmanı",
+          en: "Kafka messages — MongoDB staging layer",
+        },
+      },
+      {
+        src: "/projects/aeroops/jaeger.png",
+        caption: {
+          tr: "Dağıtık izleme (Jaeger trace)",
+          en: "Distributed tracing (Jaeger)",
+        },
+      },
+    ],
     overview: {
       tr: "AeroOps, havayolu uçuş bacağı verisini alımdan REST API'ye ve modern bir panele kadar yöneten üretim seviyesinde, olay-güdümlü bir mikroservis sistemidir. Staging katmanı, gateway kimlik doğrulaması ve kapsamlı gözlemlenebilirlik gibi dağıtık sistem desenlerini sergiler.",
       en: "AeroOps is a production-grade, event-driven microservice system that manages airline flight-leg data from ingestion through a REST API to a modern dashboard. It demonstrates distributed-systems patterns such as a staging layer, gateway authentication, and comprehensive observability.",
@@ -271,6 +292,27 @@ export const projects: Project[] = [
       "TypeScript",
     ],
     repoUrl: "https://github.com/ertugrulbayraktr/skydesk",
+    cover: "/projects/skydesk/login.png",
+    screenshots: [
+      {
+        src: "/projects/skydesk/ticket-detail.png",
+        caption: {
+          tr: "Temsilci görünümü — yapay zekâ yanıt asistanı",
+          en: "Agent view — AI reply assistant",
+        },
+      },
+      {
+        src: "/projects/skydesk/passenger-portal.png",
+        caption: { tr: "Yolcu portalı — talepler", en: "Passenger portal — requests" },
+      },
+      {
+        src: "/projects/skydesk/audit-timeline.png",
+        caption: {
+          tr: "Talep geçmişi ve denetim izi",
+          en: "Ticket history & audit trail",
+        },
+      },
+    ],
     overview: {
       tr: "Skydesk, uçuş sonrası havayolu operasyonları (iptal, iade, bagaj) için üretim seviyesinde bir destek-talebi sistemidir. Yolcular PNR ile doğrulanır; destek temsilcileri, talepleri sınıflandırıp politika atıflı yanıtlar hazırlayan bir AI copilot eşliğinde SLA takipli bir kuyrukta çalışır.",
       en: "Skydesk is a production-grade support-ticketing system for post-booking airline operations (cancellations, refunds, baggage). Passengers verify via PNR; agents work an SLA-tracked queue assisted by an AI copilot that triages tickets and drafts policy-cited replies.",
@@ -316,6 +358,23 @@ export const projects: Project[] = [
     tags: ["Python", "PyTorch", "FastAPI", "Deep Learning", "GAN", "React"],
     repoUrl:
       "https://github.com/ertugrulbayraktr/Enhancing-Skin-Lesion-Classification-with-GAN-Based-Augmentation-and-Deep-Learning",
+    cover: "/projects/skin-lesion-classification/home.png",
+    screenshots: [
+      {
+        src: "/projects/skin-lesion-classification/upload.png",
+        caption: {
+          tr: "Görsel yükleme ve örnek dermoskopi görüntüleri",
+          en: "Image upload & example dermoscopy images",
+        },
+      },
+      {
+        src: "/projects/skin-lesion-classification/results.png",
+        caption: {
+          tr: "Ön işleme — kıl artefaktı temizleme",
+          en: "Preprocessing — hair-artifact removal",
+        },
+      },
+    ],
     overview: {
       tr: "Cilt lezyonlarını (melanom, benign nevüs, bazal hücreli karsinom, aktinik keratoz, benign keratoz) sınıflandıran tam yığın bir uygulama. HAM10000 veri kümesinde %97.23 doğruluk ve %95.39 makro F1 skoru elde edildi.",
       en: "A full-stack application classifying skin lesions (melanoma, benign nevi, basal cell carcinoma, actinic keratosis, benign keratosis). It achieves 97.23% accuracy and a 95.39% macro-F1 on the HAM10000 dataset.",
@@ -344,6 +403,98 @@ export const projects: Project[] = [
       {
         tr: "React + Vite + Tailwind + Chart.js ile görselleştirme arayüzü.",
         en: "Visualization frontend with React, Vite, Tailwind and Chart.js.",
+      },
+    ],
+  },
+  {
+    slug: "crt-terminal",
+    title: {
+      tr: "CRT Terminal — Alım-Satım & Yatırım Karar Destek Platformu",
+      en: "CRT Terminal — Trading & Investing Decision-Support Platform",
+    },
+    description: {
+      tr: "Kripto için CRT sinyal tarayıcısı, çok faktörlü hisse skor panosu ve manuel portföy takibini tek koyu, bilgi-yoğun arayüzde birleştiren, kendi kendine barındırılan bir karar destek platformu.",
+      en: "A self-hosted decision-support platform combining a CRT crypto signal scanner, a multi-factor stock-scoring dashboard, and a manual portfolio tracker in one dark, information-dense interface.",
+    },
+    year: "2026",
+    tags: [
+      "FastAPI",
+      "Python",
+      "APScheduler",
+      "SQLAlchemy",
+      "SQLite",
+      "ccxt",
+      "yfinance",
+      "React",
+      "Vite",
+    ],
+    cover: "/projects/crt-terminal/signal-terminal.png",
+    screenshots: [
+      {
+        src: "/projects/crt-terminal/signal-card.png",
+        caption: { tr: "Alım-satım — sinyal kartları", en: "Trading — signal cards" },
+      },
+      {
+        src: "/projects/crt-terminal/signal-detail.png",
+        caption: {
+          tr: "Sinyal detayı — canlı mum grafiği ve CRT seviyeleri",
+          en: "Signal detail — live candles with CRT levels",
+        },
+      },
+      {
+        src: "/projects/crt-terminal/dashboard.png",
+        caption: {
+          tr: "Yatırım — karar destek panosu (skor radarları)",
+          en: "Investing — decision-support dashboard (score radars)",
+        },
+      },
+      {
+        src: "/projects/crt-terminal/stock-detail.png",
+        caption: {
+          tr: "Hisse analizi — radar, gerekçe ve emsal karşılaştırma",
+          en: "Per-stock analysis — radar, reasoning & peer comparison",
+        },
+      },
+      {
+        src: "/projects/crt-terminal/portfolio.png",
+        caption: {
+          tr: "Portföy takibi — canlı K/Z ve dağılım",
+          en: "Portfolio tracker — live P/L & allocation",
+        },
+      },
+    ],
+    overview: {
+      tr: "CRT Terminal, iki bağımsız karar destek sistemini tek koyu, bilgi-yoğun arayüzde birleştirir: kripto vadeli işlemler için Candle Range Theory (CRT) tabanlı otomatik bir sinyal tarayıcısı (Trading) ve NASDAQ + BIST için çok faktörlü bileşik skora dayalı bir hisse karar destek panosu (Investing). Üçüncü modül ise canlı kâr/zarar ile manuel bir portföy takipçisidir. Tüm veriler ücretsiz ve herkese açık kaynaklardan gelir; API anahtarı ya da aracı kurum bağlantısı yoktur.",
+      en: "CRT Terminal combines two independent decision-support systems behind one dark, information-dense interface: an automated Candle Range Theory (CRT) signal scanner for crypto perpetual futures (Trading), and a multi-factor composite-score stock dashboard for NASDAQ + BIST (Investing). A third module is a manual portfolio tracker with live P/L. All data comes from free, public sources — no API keys, no brokerage connection.",
+    },
+    problem: {
+      tr: "Disiplinli bir alım-satım ve yatırım süreci; mekanik kurallara sadık sinyaller, faktör bazlı şeffaf hisse değerlendirmesi ve bütünleşik bir portföy görünümü gerektirir — üstelik hiçbir zaman emir vermeden, yalnızca karar desteği sağlayarak.",
+      en: "A disciplined trading and investing process needs rule-faithful signals, transparent factor-based stock evaluation, and a unified portfolio view — all while never placing an order, providing decision support only.",
+    },
+    solution: {
+      tr: "Her (parite × zaman dilimi) için deterministik bir durum makinesi Haftalık/Günlük/H4 aralıklarını izleyerek kural-uyumlu CRT kurulumları (çift giriş, OTE limit, RR≥1 filtresi, death rule) üretir. Yatırım tarafında her hisse; kalite, değer, büyüme, sağlık, analist, düşük-volatilite, teknik ve temettü faktörlerinden oluşan, sektöre göre normalize edilmiş bir bileşik skorla sıralanır ve metrik-bazında gerekçelendirilir. Tek bir uzun-ömürlü FastAPI + APScheduler süreci tüm durumu SQLite'ta tutar (yeniden başlatmaya dayanıklı); React + Vite arayüzü REST API'yi canlı yoklar.",
+      en: "A deterministic state machine per (pair × timeframe) watches Weekly/Daily/H4 ranges and produces rule-compliant CRT setups (dual entries, OTE limit, RR≥1 filtering, death rule). On the investing side, each stock is ranked by a sector-normalized composite score across quality, value, growth, health, analyst, low-volatility, technical and dividend factors, with a per-metric breakdown. A single long-running FastAPI + APScheduler process holds all state in SQLite (restart-safe); a React + Vite frontend polls the REST API.",
+    },
+    highlights: [
+      {
+        tr: "Mekanik CRT motoru: dört doğrulama tipi (MSB/IFVG/Breaker/Reclaim), OTE limit girişleri, RR≥1 filtresi, Super CRT tespiti ve haftalık bias.",
+        en: "Mechanical CRT engine: four confirmation types (MSB/IFVG/Breaker/Reclaim), OTE limit entries, RR≥1 filtering, Super CRT detection and weekly bias.",
+      },
+      {
+        tr: "Profesyonel faktör modeli: sektöre göre yüzdelik sıralama, 12-1 momentum, düşük-volatilite eğilimi ve BIST enflasyon muhasebesi (TMS 29) işleme.",
+        en: "Professional factor model: cross-sectional percentile ranking, 12-1 momentum, low-volatility tilt, and BIST inflation-accounting (TMS 29) handling.",
+      },
+      {
+        tr: "Yalnızca ücretsiz, herkese açık veri: kripto için ccxt (Binance USDT-M), hisse için yfinance (~187 NASDAQ + ~49 BIST).",
+        en: "Free, public data only: ccxt (Binance USDT-M) for crypto, yfinance (~187 NASDAQ + ~49 BIST) for stocks.",
+      },
+      {
+        tr: "Yeniden başlatmaya dayanıklı tek süreç (FastAPI + APScheduler, SQLite), opsiyonel Telegram bildirimleri ve 108 geçen test.",
+        en: "Restart-safe single process (FastAPI + APScheduler, SQLite), optional Telegram notifications, and 108 passing tests.",
+      },
+      {
+        tr: "Sorumlu tasarım: salt-okunur veri, emir verilmez, aracı kurum bağlantısı yoktur; sistem 'al/sat' demez, yalnızca gerekçeli durum gösterir. Yatırım tavsiyesi değildir.",
+        en: "Responsible by design: read-only data, never places orders, no brokerage link; the system never says 'buy/sell', only shows reasoned status. Not financial advice.",
       },
     ],
   },
