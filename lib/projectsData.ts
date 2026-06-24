@@ -10,8 +10,12 @@ function assetExists(publicPath: string): boolean {
 // Var olmayan kapak/ekran görüntülerini ayıklar (kırık imaj olmasın diye).
 function withAssets(project: Project): Project {
   const cover = project.cover && assetExists(project.cover) ? project.cover : undefined;
+  const cardImage =
+    project.cardImage && assetExists(project.cardImage)
+      ? project.cardImage
+      : undefined;
   const screenshots = project.screenshots?.filter((s) => assetExists(s.src));
-  return { ...project, cover, screenshots };
+  return { ...project, cover, cardImage, screenshots };
 }
 
 export function getProjectsList(): Project[] {

@@ -23,11 +23,11 @@ export default function Projects({ items }: { items: Project[] }) {
               href={`/projects/${project.slug}`}
               className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-bg-soft transition hover:-translate-y-1 hover:border-accent hover:shadow-sm"
             >
-              {project.cover && (
+              {(project.cardImage ?? project.cover) && (
                 <div className="aspect-[16/9] w-full overflow-hidden border-b border-border bg-bg">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={project.cover}
+                    src={project.cardImage ?? project.cover}
                     alt={pick(project.title, lang)}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                   />

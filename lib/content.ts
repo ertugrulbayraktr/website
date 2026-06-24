@@ -182,9 +182,12 @@ export interface Project {
   tags: string[];
   liveUrl?: string;
   repoUrl?: string;
-  // Kapak görseli — public/projects/<slug>/cover.png koyup buraya yolu yazın.
-  // Dosya yoksa kart metin olarak kalır (kırık imaj görünmez).
+  // Detay sayfasında, Overview üzerinde gösterilen banner görseli.
+  // Dosya yoksa banner gösterilmez (kırık imaj olmaz).
   cover?: string;
+  // Projeler grid'indeki KART görseli. Verilmezse `cover` kullanılır.
+  // public/projects/<slug>/card.png koyup buraya yolu yazın.
+  cardImage?: string;
   // Detay sayfası içeriği
   overview: LocalizedText;
   problem: LocalizedText;
@@ -220,6 +223,7 @@ export const projects: Project[] = [
     repoUrl:
       "https://github.com/ertugrulbayraktr/aeroops-microservices-platform",
     cover: "/projects/aeroops/dashboard.png",
+    cardImage: "/projects/aeroops/card.png",
     screenshots: [
       {
         src: "/projects/aeroops/flight-list.png",
@@ -293,6 +297,7 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/ertugrulbayraktr/skydesk",
     cover: "/projects/skydesk/login.png",
+    cardImage: "/projects/skydesk/card.png",
     screenshots: [
       {
         src: "/projects/skydesk/ticket-detail.png",
@@ -359,6 +364,7 @@ export const projects: Project[] = [
     repoUrl:
       "https://github.com/ertugrulbayraktr/Enhancing-Skin-Lesion-Classification-with-GAN-Based-Augmentation-and-Deep-Learning",
     cover: "/projects/skin-lesion-classification/home.png",
+    cardImage: "/projects/skin-lesion-classification/card.png",
     screenshots: [
       {
         src: "/projects/skin-lesion-classification/upload.png",
