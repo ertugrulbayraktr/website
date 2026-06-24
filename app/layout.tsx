@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Newsreader, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Providers from "@/components/Providers";
 
-const inter = Inter({
-  subsets: ["latin"],
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin", "latin-ext"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="tr" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
+        className={`${spaceGrotesk.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
       >
         <Providers>{children}</Providers>
         <Analytics />

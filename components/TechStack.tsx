@@ -19,7 +19,7 @@ export default function TechStack() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {stack.map((group, i) => (
             <Reveal key={i} delay={i * 0.05}>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">
+              <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted">
                 {pick(group.category, lang)}
               </h3>
               <ul className="mt-4 flex flex-wrap gap-2">

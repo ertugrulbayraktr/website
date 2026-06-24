@@ -43,7 +43,7 @@ export default function About() {
           <div className="space-y-12 lg:col-span-2">
             {/* Eğitim */}
             <Reveal>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">
+              <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted">
                 {t("about.education")}
               </h3>
               <div className="mt-5 space-y-6">
@@ -68,7 +68,7 @@ export default function About() {
 
             {/* Sertifikalar */}
             <Reveal>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">
+              <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted">
                 {t("about.certifications")}
               </h3>
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
