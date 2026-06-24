@@ -44,7 +44,7 @@ export interface TimelineItem {
   period: LocalizedText;
   role: LocalizedText;
   org: LocalizedText;
-  description: LocalizedText;
+  description?: LocalizedText;
   // Opsiyonel logo — public/logos/ içine dosyayı koyun (örn. "/logos/turkcell.svg").
   // Dosya yoksa otomatik olarak kurum baş harfleri gösterilir.
   logo?: string;
@@ -65,10 +65,6 @@ export const timeline: TimelineItem[] = [
     logo: "/logos/turkcell.jpeg",
     logoScale: 3.8,
     logoOffsetY: 32,
-    description: {
-      tr: "Turkcell Global Bilgi'nin Technocamp programına seçildim; uygulamalı geliştirme ve modern mühendislik pratiklerine odaklanan yapılandırılmış bir yazılım mühendisliği programı.",
-      en: "Selected for Turkcell Global Bilgi's Technocamp program — a structured software engineering track focused on hands-on development and modern engineering practices.",
-    },
   },
   {
     period: { tr: "Nis 2026 — Haz 2026", en: "Apr 2026 — Jun 2026" },

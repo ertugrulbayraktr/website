@@ -54,16 +54,18 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                   )}
                 </span>
 
-                <p className="inline-block rounded-full border border-border px-3 py-1 text-xs font-medium uppercase tracking-wider text-muted">
+                <p className="inline-block rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-wider text-muted">
                   {pick(item.period, lang)}
                 </p>
                 <h3 className="mt-3 font-serif text-xl font-semibold">
                   {pick(item.role, lang)}
                 </h3>
                 <p className="text-accent">{org}</p>
-                <p className="mt-2 max-w-2xl text-muted">
-                  {pick(item.description, lang)}
-                </p>
+                {item.description && (
+                  <p className="mt-2 max-w-2xl text-muted">
+                    {pick(item.description, lang)}
+                  </p>
+                )}
               </div>
             </Reveal>
           );
