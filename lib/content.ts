@@ -428,7 +428,7 @@ export const projects: Project[] = [
       "React",
       "Vite",
     ],
-    cover: "/projects/crt-terminal/signal-terminal.png",
+    cover: "/projects/crt-terminal/dashboard.png",
     screenshots: [
       {
         src: "/projects/crt-terminal/signal-card.png",
@@ -442,10 +442,10 @@ export const projects: Project[] = [
         },
       },
       {
-        src: "/projects/crt-terminal/dashboard.png",
+        src: "/projects/crt-terminal/signal-terminal.png",
         caption: {
-          tr: "Yatırım — karar destek panosu (skor radarları)",
-          en: "Investing — decision-support dashboard (score radars)",
+          tr: "Alım-satım — izlenen kurulumlar (sinyal terminali)",
+          en: "Trading — watched setups (signal terminal)",
         },
       },
       {
